@@ -45,6 +45,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `due: YYYY-MM-DD`
   - `created-from: "[[Meeting or Daily Note]]"` (optional — set when agent creates task from another note)
   - `related: []`
+  - `.template-name: "[[task.template]]"`
+  - `.template-version: 1.0.0`
 
 ### project
 - **Path**: `Projects/<project-name>.md`
@@ -57,6 +59,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `target-date: YYYY-MM-DD`
   - `outcome: one-line goal statement`
   - `related: []`
+  - `.template-name: "[[project.template]]"`
+  - `.template-version: 1.0.0`
 - **Embeds**: `![[Tasks.base#Project Tasks]]`, `![[Meetings.base#Meetings - For Project]]`
 
 ### area
@@ -65,6 +69,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
 - **Schema**:
   - `type: area`
   - `related: []`
+  - `.template-name: "[[area.template]]"`
+  - `.template-version: 1.0.0`
 - **Embeds**: `![[Projects.base#Active]]`, `![[Tasks.base#Active]]`
 
 ### meeting
@@ -78,6 +84,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `area: "[[Area Name]]"`
   - `meeting-type: 1-1 | standup | planning | review | ad-hoc`
   - `related: []`
+  - `.template-name: "[[meeting.template]]"`
+  - `.template-version: 1.0.0`
 
 ### person
 - **Path**: `Areas/People/<Person Name>.md`
@@ -89,6 +97,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `email:`
   - `birthday: YYYY-MM-DD`
   - `related: []`
+  - `.template-name: "[[person.template]]"`
+  - `.template-version: 1.0.0`
 - **Embeds**: `![[Meetings.base#Meetings - With Person]]`
 
 ### learning
@@ -102,6 +112,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `url:`
   - `project: "[[Project Name]]"`
   - `related: []`
+  - `.template-name: "[[learning.template]]"`
+  - `.template-version: 1.0.0`
 
 ### purchase
 - **Path**: `Resources/Purchases/<item-name>.md`
@@ -114,6 +126,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `vendor:`
   - `decision-date: YYYY-MM-DD`
   - `related: []`
+  - `.template-name: "[[purchase.template]]"`
+  - `.template-version: 1.0.0`
 
 ### asset
 - **Path**: `Resources/Assets/<asset-name>.md`
@@ -131,6 +145,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `url:` (digital assets)
   - `vendor:`
   - `related: []`
+  - `.template-name: "[[asset.template]]"`
+  - `.template-version: 1.0.0`
 
 ### finance
 - **Path**: `Areas/Finances/<YYYY-MM> - <description>.md`
@@ -142,6 +158,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `amount:`
   - `account:`
   - `related: []`
+  - `.template-name: "[[finance.template]]"`
+  - `.template-version: 1.0.0`
 
 ### wiki
 - **Path**: `Resources/Wiki/<topic>.md`
@@ -150,6 +168,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `type: wiki`
   - `tags: []`
   - `related: []`
+  - `.template-name: "[[wiki.template]]"`
+  - `.template-version: 1.0.0`
 
 ### daily-note
 - **Path**: `_daily/daily-notes/YYYY-MM-DD.md`
@@ -158,6 +178,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `type: daily-note`
   - `date: YYYY-MM-DD`
   - `related: []`
+  - `.template-name: "[[daily-note.template]]"`
+  - `.template-version: 1.0.0`
 - **Embeds**: `![[Tasks.base#Today's Tasks]]`, `![[Meetings.base#Meetings - This Day]]`
 
 ## Bases Reference
@@ -167,6 +189,7 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
 | `_assets/bases/Kanban.base` | Kanban | `![[Kanban.base#Kanban]]` |
 | `_assets/bases/Kanban.base` | Blocked | `![[Kanban.base#Blocked]]` |
 | `_assets/bases/Tasks.base` | Active | `![[Tasks.base#Active]]` |
+| `_assets/bases/Tasks.base` | By Project | `![[Tasks.base#By Project]]` |
 | `_assets/bases/Tasks.base` | Today's Tasks | `![[Tasks.base#Today's Tasks]]` |
 | `_assets/bases/Tasks.base` | Project Tasks | `![[Tasks.base#Project Tasks]]` |
 | `_assets/bases/Tasks.base` | Overdue | `![[Tasks.base#Overdue]]` |
