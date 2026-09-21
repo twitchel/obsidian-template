@@ -25,13 +25,24 @@ views:
       - property: file.name
         direction: ASC
   - type: table
-    name: Personal
+    name: Friends
     filters:
       and:
         - relationship == "friend"
     order:
       - file.name
       - relationship
+      - birthday
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Family
+    filters:
+      and:
+        - relationship == "family"
+    order:
+      - file.name
       - birthday
     sort:
       - property: file.name

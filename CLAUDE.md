@@ -182,6 +182,14 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
   - `.template-version: 1.0.0`
 - **Embeds**: `![[Tasks.base#Today's Tasks]]`, `![[Meetings.base#Meetings - This Day]]`
 
+### weekly-summary
+- **Path**: `_generated/weekly-summaries/YYYY-Www.md` (agent-written)
+- **Template**: `_assets/templates/weekly-summary.template.md` (agent reference only — not auto-triggered)
+- **Schema**:
+  - `type: weekly-summary`
+  - `week: YYYY-Www`
+  - `related: []`
+
 ## Bases Reference
 
 | Base file | View name | Embed syntax |
@@ -203,7 +211,8 @@ Notes live inside Projects/, Areas/, Resources/. Type is a frontmatter property,
 | `_assets/bases/Projects.base` | By Area | `![[Projects.base#By Area]]` |
 | `_assets/bases/People.base` | All | `![[People.base#All]]` |
 | `_assets/bases/People.base` | Colleagues | `![[People.base#Colleagues]]` |
-| `_assets/bases/People.base` | Personal | `![[People.base#Personal]]` |
+| `_assets/bases/People.base` | Friends | `![[People.base#Friends]]` |
+| `_assets/bases/People.base` | Family | `![[People.base#Family]]` |
 | `_assets/bases/Learning.base` | In Progress | `![[Learning.base#In Progress]]` |
 | `_assets/bases/Learning.base` | Want To | `![[Learning.base#Want To]]` |
 | `_assets/bases/Learning.base` | Done | `![[Learning.base#Done]]` |

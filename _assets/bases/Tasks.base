@@ -39,6 +39,7 @@ views:
     filters:
       and:
         - status != "done"
+        - due != ""
     order:
       - file.name
       - priority
