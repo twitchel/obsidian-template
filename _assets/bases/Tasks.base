@@ -1,0 +1,82 @@
+filters:
+  and:
+    - type == "task"
+views:
+  - type: table
+    name: Active
+    filters:
+      and:
+        - status != "done"
+    order:
+      - file.name
+      - status
+      - priority
+      - project
+      - area
+      - due
+    sort:
+      - property: priority
+        direction: ASC
+      - property: due
+        direction: ASC
+  - type: table
+    name: By Project
+    filters:
+      and:
+        - status != "done"
+    order:
+      - file.name
+      - status
+      - priority
+      - due
+    sort:
+      - property: project
+        direction: ASC
+      - property: priority
+        direction: ASC
+  - type: table
+    name: Overdue
+    filters:
+      and:
+        - status != "done"
+    order:
+      - file.name
+      - priority
+      - due
+      - project
+    sort:
+      - property: due
+        direction: ASC
+  - type: table
+    name: Done
+    filters:
+      and:
+        - status == "done"
+    order:
+      - file.name
+      - project
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: Today's Tasks
+    filters:
+      and:
+        - note["created-from"] == link(file(this))
+    order:
+      - file.name
+      - status
+      - priority
+      - due
+  - type: table
+    name: Project Tasks
+    filters:
+      and:
+        - note.project == link(file(this))
+        - status != "done"
+    order:
+      - file.name
+      - status
+      - priority
+      - due

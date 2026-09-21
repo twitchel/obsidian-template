@@ -1,0 +1,38 @@
+filters:
+  and:
+    - type == "person"
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - relationship
+      - org
+      - email
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Colleagues
+    filters:
+      and:
+        - relationship == "colleague"
+    order:
+      - file.name
+      - org
+      - email
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Personal
+    filters:
+      and:
+        - relationship == "friend"
+    order:
+      - file.name
+      - relationship
+      - birthday
+    sort:
+      - property: file.name
+        direction: ASC

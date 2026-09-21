@@ -1,0 +1,12 @@
+filters:
+  and:
+    - file.inFolder("_inbox")
+views:
+  - type: table
+    name: Inbox
+    order:
+      - file.name
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC

@@ -1,0 +1,40 @@
+filters:
+  and:
+    - type == "project"
+views:
+  - type: table
+    name: Active
+    filters:
+      and:
+        - status == "active"
+    order:
+      - file.name
+      - area
+      - target-date
+      - outcome
+    sort:
+      - property: target-date
+        direction: ASC
+  - type: table
+    name: All
+    order:
+      - file.name
+      - status
+      - area
+      - target-date
+    sort:
+      - property: status
+        direction: ASC
+      - property: target-date
+        direction: ASC
+  - type: table
+    name: By Area
+    order:
+      - file.name
+      - status
+      - target-date
+    sort:
+      - property: area
+        direction: ASC
+      - property: status
+        direction: ASC

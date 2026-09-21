@@ -1,0 +1,39 @@
+filters:
+  and:
+    - type == "learning"
+views:
+  - type: table
+    name: In Progress
+    filters:
+      and:
+        - status == "in-progress"
+    order:
+      - file.name
+      - medium
+      - author
+      - project
+  - type: table
+    name: Want To
+    filters:
+      and:
+        - status == "want"
+    order:
+      - file.name
+      - medium
+      - author
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC
+  - type: table
+    name: Done
+    filters:
+      and:
+        - status == "done"
+    order:
+      - file.name
+      - medium
+      - author
+    sort:
+      - property: file.mtime
+        direction: DESC

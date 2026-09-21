@@ -1,0 +1,38 @@
+filters:
+  and:
+    - type == "finance"
+views:
+  - type: table
+    name: By Period
+    order:
+      - period
+      - file.name
+      - category
+      - amount
+      - account
+    sort:
+      - property: period
+        direction: DESC
+  - type: table
+    name: By Category
+    order:
+      - category
+      - file.name
+      - amount
+      - period
+    sort:
+      - property: category
+        direction: ASC
+  - type: table
+    name: Expenses
+    filters:
+      and:
+        - category == "expense"
+    order:
+      - period
+      - file.name
+      - amount
+      - account
+    sort:
+      - property: period
+        direction: DESC

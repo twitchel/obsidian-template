@@ -1,0 +1,79 @@
+filters:
+  and:
+    - type == "asset"
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - asset-type
+      - category
+      - status
+      - value
+      - vendor
+    sort:
+      - property: category
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Physical
+    filters:
+      and:
+        - asset-type == "physical"
+    order:
+      - file.name
+      - category
+      - status
+      - value
+      - location
+      - warranty-expiry
+    sort:
+      - property: category
+        direction: ASC
+  - type: table
+    name: Digital
+    filters:
+      and:
+        - asset-type == "digital"
+    order:
+      - file.name
+      - category
+      - status
+      - url
+    sort:
+      - property: category
+        direction: ASC
+  - type: table
+    name: Warranties
+    filters:
+      and:
+        - warranty-expiry != ""
+    order:
+      - file.name
+      - warranty-expiry
+      - vendor
+      - value
+    sort:
+      - property: warranty-expiry
+        direction: ASC
+  - type: table
+    name: By Category
+    order:
+      - file.name
+      - asset-type
+      - status
+      - value
+    sort:
+      - property: category
+        direction: ASC
+  - type: table
+    name: Related To
+    filters:
+      and:
+        - related.contains(link(file(this)))
+    order:
+      - file.name
+      - asset-type
+      - category
+      - status

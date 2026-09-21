@@ -1,0 +1,52 @@
+filters:
+  and:
+    - type == "meeting"
+views:
+  - type: table
+    name: All Meetings
+    order:
+      - date
+      - file.name
+      - meeting-type
+      - attendees
+    sort:
+      - property: date
+        direction: DESC
+  - type: table
+    name: Meetings - With Person
+    filters:
+      and:
+        - attendees.contains(link(file(this)))
+    order:
+      - date
+      - file.name
+      - meeting-type
+    sort:
+      - property: date
+        direction: DESC
+    limit: 10
+  - type: table
+    name: Meetings - This Day
+    filters:
+      and:
+        - date == file(this).name
+    order:
+      - file.name
+      - meeting-type
+      - attendees
+    sort:
+      - property: attendees
+        direction: ASC
+  - type: table
+    name: Meetings - For Project
+    filters:
+      and:
+        - note.project == link(file(this))
+    order:
+      - date
+      - file.name
+      - meeting-type
+      - attendees
+    sort:
+      - property: date
+        direction: DESC

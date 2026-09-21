@@ -1,0 +1,42 @@
+filters:
+  and:
+    - type == "purchase"
+views:
+  - type: table
+    name: Researching
+    filters:
+      and:
+        - status == "researching"
+    order:
+      - file.name
+      - category
+      - price
+      - vendor
+    sort:
+      - property: file.ctime
+        direction: DESC
+  - type: table
+    name: Decided
+    filters:
+      and:
+        - status == "decided"
+    order:
+      - file.name
+      - category
+      - price
+      - vendor
+      - decision-date
+    sort:
+      - property: decision-date
+        direction: DESC
+  - type: table
+    name: All
+    order:
+      - file.name
+      - status
+      - category
+      - price
+      - vendor
+    sort:
+      - property: file.mtime
+        direction: DESC

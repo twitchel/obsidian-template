@@ -1,0 +1,23 @@
+filters:
+  and:
+    - type == "task"
+views:
+  - type: board
+    name: Kanban
+    groupBy: status
+    order:
+      - file.name
+      - priority
+      - project
+      - due
+  - type: table
+    name: Blocked
+    filters:
+      and:
+        - status == "blocked"
+    order:
+      - file.name
+      - priority
+      - project
+      - area
+      - due
